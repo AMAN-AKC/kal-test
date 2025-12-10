@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Vulnerable XSS Demo</title>
-</head>
-<body>
+  </head>
+  <body>
     <form method="POST">
-        {% csrf_token %}
-        <label for="name">Enter your name (try: &lt;script&gt;alert('XSS')&lt;/script&gt;):</label><br><br>
-        <input type="text" id="name" name="name" placeholder="Enter something...">
-        <button type="submit">Submit</button>
+      {% csrf_token %}
+      <label for="name"
+        >Enter your name (try:
+        &lt;script&gt;alert('XSS')&lt;/script&gt;):</label
+      ><br /><br />
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter something..."
+      />
+      <button type="submit">Submit</button>
     </form>
 
     {% if name %}
     <h3>Output:</h3>
     <p>Hello, {{ name|safe }}</p>
     {% endif %}
-</body>
+  </body>
 </html>
