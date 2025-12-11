@@ -1,5 +1,4 @@
-HR Project
-==========
+# HR Project
 
 This Django project `hr_project` contains an `employees` app to add employees and list those with salary > 50,000.
 
@@ -14,6 +13,6 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Open: http://127.0.0.1:8000/hr/  (add employee)
+Open: http://127.0.0.1:8000/hr/ (add employee)
 High-salary list: http://127.0.0.1:8000/hr/high/
 All employees: http://127.0.0.1:8000/hr/all/

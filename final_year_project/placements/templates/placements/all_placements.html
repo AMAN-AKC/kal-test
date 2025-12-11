@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>All Placements</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-  <div class="container mt-5">
-    <div class="card">
-      <div class="card-header bg-info text-white">All Placements</div>
-      <div class="card-body">
-        {% if students %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>All Placements</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header bg-info text-white">All Placements</div>
+        <div class="card-body">
+          {% if students %}
           <table class="table table-bordered">
-            <thead class="table-dark"><tr><th>USN</th><th>Name</th><th>Company</th></tr></thead>
+            <thead class="table-dark">
+              <tr>
+                <th>USN</th>
+                <th>Name</th>
+                <th>Company</th>
+              </tr>
+            </thead>
             <tbody>
               {% for s in students %}
               <tr>
@@ -24,14 +33,18 @@
               {% endfor %}
             </tbody>
           </table>
-        {% else %}
+          {% else %}
           <div class="alert alert-info">No placements recorded.</div>
-        {% endif %}
-        <div class="mt-3">
-          <a href="{% url 'placements:add_placement' %}" class="btn btn-primary">Add New</a>
+          {% endif %}
+          <div class="mt-3">
+            <a
+              href="{% url 'placements:add_placement' %}"
+              class="btn btn-primary"
+              >Add New</a
+            >
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

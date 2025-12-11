@@ -1,5 +1,4 @@
-Final Year Placements Project
-=============================
+# Final Year Placements Project
 
 This Django project `final_year_project` contains a `placements` app to record final-year placements and list students placed at Amazon.
 
@@ -15,6 +14,7 @@ python manage.py runserver
 ```
 
 Open:
+
 - Add placement: http://127.0.0.1:8000/placements/
 - Amazon placements: http://127.0.0.1:8000/placements/amazon/
 - All placements: http://127.0.0.1:8000/placements/all/

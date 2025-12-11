@@ -1,12 +1,11 @@
-Biodata Project
-===============
+# Biodata Project
 
-Overview
---------
+## Overview
+
 A minimal Django app that displays a biodata form and shows the submitted data on a results page. This app does not use the database; it uses a plain `Form` and renders the cleaned data.
 
-Important files
----------------
+## Important files
+
 - `biodata/forms.py` — defines the form fields shown to the user.
 
 Example (`biodata/forms.py`):
@@ -54,8 +53,8 @@ urlpatterns = [
 ]
 ```
 
-Setup & Run
------------
+## Setup & Run
+
 Assumes you have a Python virtual environment named `myevn` in the workspace root and Django installed there. No database migrations are required for this app.
 
 On Windows (PowerShell or cmd):
@@ -72,16 +71,15 @@ Open in a browser:
 - If the app is mounted at `biodata/`: http://127.0.0.1:8000/biodata/
 - If the app was wired to root (`''`) in project `urls.py`: http://127.0.0.1:8000/
 
-Notes
------
+## Notes
+
 - This app is intentionally DB-free; it's useful for front-end form demos.
 - If you want to persist submissions, convert `BiodataForm` into a `ModelForm` and add a `Biodata` model in `models.py`, then run `makemigrations` and `migrate`.
 
-Files to review
----------------
+## Files to review
+
 - `biodata/forms.py` — form fields and widgets
 - `biodata/views.py` — submission handling
 - `biodata/templates/biodata/form.html` — HTML form
 - `biodata/templates/biodata/display.html` — result display
 - `biodata/urls.py` and `biodata_project/urls.py` — routing
-

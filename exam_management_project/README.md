@@ -1,5 +1,4 @@
-Exam Management Project
-=======================
+# Exam Management Project
 
 This Django project `exam_management_project` contains an `exam_app` to add students and list those who secured grade 'O'.
 
@@ -15,6 +14,7 @@ python manage.py runserver
 ```
 
 Open:
+
 - Add student: http://127.0.0.1:8000/exam/
 - O-grade list: http://127.0.0.1:8000/exam/o-grade/
 - All students: http://127.0.0.1:8000/exam/all/

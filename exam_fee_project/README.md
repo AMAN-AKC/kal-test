@@ -1,12 +1,11 @@
-Exam Fee Project
-=================
+# Exam Fee Project
 
-Overview
---------
+## Overview
+
 A Django app to manage exam fee entries for students. It stores student fee records in SQLite (Django default) and provides views to add students, list all students, and delete unpaid entries.
 
-Important files
----------------
+## Important files
+
 - `exam_fee/models.py` — model definition for `ExamStudent`.
 
 Example (`exam_fee/models.py`):
@@ -96,8 +95,8 @@ urlpatterns = [
   - `exam_fee/templates/exam_fee/add_student.html` — form for new entries.
   - `exam_fee/templates/exam_fee/list_students.html` — table of students with `fee_paid` status and a button/link to delete unpaid entries.
 
-Setup & Run
------------
+## Setup & Run
+
 Assumes a Python virtual environment `myevn` in the workspace root and Django installed there.
 
 On Windows (cmd/PowerShell):
@@ -111,17 +110,16 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Notes
------
+## Notes
+
 - After creating students via the add form, the view will set `fee_paid=True` when `fee_amount` &gt; 0. If you want manual control for `fee_paid`, add the field to the form and update template accordingly.
 - Use the `delete-unpaid/` endpoint (or add a button in the admin/template) to remove all unpaid students.
 - Admin: register `ExamStudent` in `exam_fee/admin.py` to manage entries from Django admin.
 
-Files to review
----------------
+## Files to review
+
 - `exam_fee/models.py`
 - `exam_fee/forms.py`
 - `exam_fee/views.py`
 - `exam_fee/urls.py`
 - `exam_fee/templates/exam_fee/*`
-
