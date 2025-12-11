@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Students Exam Fee</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container mt-5">
-        <div class="card shadow">
-            <div class="card-header bg-info text-white">
-                <h3 class="text-center mb-0">Students Exam Fee Records</h3>
-            </div>
-            <div class="card-body">
-                {% if students %}
-                    <table class="table table-bordered table-striped">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>USN</th>
-                                <th>Name</th>
-                                <th>Semester</th>
-                                <th>Fee Amount</th>
-                                <th>Fee Paid</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for s in students %}
-                            <tr>
-                                <td>{{ s.usn }}</td>
-                                <td>{{ s.name }}</td>
-                                <td>{{ s.semester }}</td>
-                                <td>{{ s.fee_amount }}</td>
-                                <td>
-                                    {% if s.fee_paid %}
-                                        <span class="badge bg-success">Paid</span>
-                                    {% else %}
-                                        <span class="badge bg-danger">Not Paid</span>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                {% else %}
-                    <div class="alert alert-info">No students found.</div>
-                {% endif %}
-                <div class="mt-3 text-center">
-                    <a href="{% url 'exam_fee:add_student' %}" class="btn btn-primary">Add New</a>
-                    <a href="{% url 'exam_fee:delete_unpaid' %}" class="btn btn-danger">Delete Unpaid</a>
-                </div>
-            </div>
+      <div class="card shadow">
+        <div class="card-header bg-info text-white">
+          <h3 class="text-center mb-0">Students Exam Fee Records</h3>
         </div>
+        <div class="card-body">
+          {% if students %}
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>USN</th>
+                <th>Name</th>
+                <th>Semester</th>
+                <th>Fee Amount</th>
+                <th>Fee Paid</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for s in students %}
+              <tr>
+                <td>{{ s.usn }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.semester }}</td>
+                <td>{{ s.fee_amount }}</td>
+                <td>
+                  {% if s.fee_paid %}
+                  <span class="badge bg-success">Paid</span>
+                  {% else %}
+                  <span class="badge bg-danger">Not Paid</span>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <div class="alert alert-info">No students found.</div>
+          {% endif %}
+          <div class="mt-3 text-center">
+            <a href="{% url 'exam_fee:add_student' %}" class="btn btn-primary"
+              >Add New</a
+            >
+            <a href="{% url 'exam_fee:delete_unpaid' %}" class="btn btn-danger"
+              >Delete Unpaid</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
